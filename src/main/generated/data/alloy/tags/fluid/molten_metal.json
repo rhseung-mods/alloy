@@ -1,0 +1,14 @@
+{
+  "values": [
+    "alloy:molten_copper",
+    "alloy:flowing_molten_copper",
+    "alloy:molten_iron",
+    "alloy:flowing_molten_iron",
+    "alloy:molten_gold",
+    "alloy:flowing_molten_gold",
+    "alloy:molten_netherite",
+    "alloy:flowing_molten_netherite",
+    "alloy:molten_steel",
+    "alloy:flowing_molten_steel"
+  ]
+}

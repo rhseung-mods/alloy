@@ -1,0 +1,19 @@
+{
+  "block.alloy.molten_copper": "Molten Copper",
+  "block.alloy.molten_gold": "Molten Gold",
+  "block.alloy.molten_iron": "Molten Iron",
+  "block.alloy.molten_netherite": "Molten Netherite",
+  "block.alloy.molten_steel": "Molten Steel",
+  "block.alloy.steel_block": "Steel Block",
+  "item.alloy.copper_bucket": "Molten Copper Bucket",
+  "item.alloy.copper_nugget": "Copper Nugget",
+  "item.alloy.gold_bucket": "Molten Gold Bucket",
+  "item.alloy.iron_bucket": "Molten Iron Bucket",
+  "item.alloy.netherite_bucket": "Molten Netherite Bucket",
+  "item.alloy.netherite_nugget": "Netherite Nugget",
+  "item.alloy.steel_bucket": "Molten Steel Bucket",
+  "item.alloy.steel_ingot": "Steel Ingot",
+  "item.alloy.steel_nugget": "Steel Nugget",
+  "itemgroup.alloy.metal_tab": "Metal",
+  "tag.fluid.alloy.molten_metal": "Molten Metal Tag"
+}

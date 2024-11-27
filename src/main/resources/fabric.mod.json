@@ -17,13 +17,19 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "com.rhseung.alloy.Alloy",
+				"value": "com.rhseung.alloy.Mod",
 				"adapter": "kotlin"
 			}
 		],
 		"fabric-datagen": [
 			{
-				"value": "com.rhseung.alloy.AlloyDataGenerator",
+				"value": "com.rhseung.alloy.ModDataGenerator",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.rhseung.alloy.ModClient",
 				"adapter": "kotlin"
 			}
 		]
