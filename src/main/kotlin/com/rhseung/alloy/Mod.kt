@@ -1,6 +1,7 @@
 package com.rhseung.alloy
 
 import com.rhseung.alloy.init.*
+import com.rhseung.alloy.metal.Metal
 import net.fabricmc.api.ModInitializer
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
@@ -15,7 +16,11 @@ object Mod : ModInitializer {
 
 	override fun onInitialize() {
 		Metal.initialize();
+
 		ModFluidTags.initialize();
 		ModItemGroups.initialize();
+		ModDamageTypes.initialize();
+		ModComponentTypes.initialize();
+		ModBlockEntityTypes.initialize();
 	}
 }

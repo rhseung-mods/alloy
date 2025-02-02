@@ -1,11 +1,12 @@
-package com.rhseung.alloy.init
+package com.rhseung.alloy.metal
 
 import com.rhseung.alloy.Mod
-import com.rhseung.alloy.block.SmartBlock
-import com.rhseung.alloy.item.SmartBucketItem
-import com.rhseung.alloy.block.SmartFluidBlock
-import com.rhseung.alloy.item.SmartItem
-import com.rhseung.alloy.fluid.MoltenMetalFluid
+import com.rhseung.alloy.custom.block.SmartBlock
+import com.rhseung.alloy.custom.item.SmartBucketItem
+import com.rhseung.alloy.custom.block.SmartFluidBlock
+import com.rhseung.alloy.custom.item.SmartItem
+import com.rhseung.alloy.custom.fluid.MoltenMetalFluid
+import com.rhseung.alloy.init.ModItemGroups
 import com.rhseung.alloy.util.Color
 import net.minecraft.block.Block
 import net.minecraft.block.Blocks
@@ -20,7 +21,7 @@ enum class Metal(
     ingotPreset: Item? = null,
     storageBlockPreset: Block? = null
 ) {
-    COPPER(Color.COPPER.brighter(50),
+    COPPER(Color.COPPER,
         ingotPreset = Items.COPPER_INGOT,
         storageBlockPreset = Blocks.COPPER_BLOCK
     ),
@@ -29,7 +30,7 @@ enum class Metal(
         ingotPreset = Items.IRON_INGOT,
         storageBlockPreset = Blocks.IRON_BLOCK
     ),
-    GOLD(Color.GOLD.brighter(50),
+    GOLD(Color.GOLD,
         nuggetPreset = Items.GOLD_NUGGET,
         ingotPreset = Items.GOLD_INGOT,
         storageBlockPreset = Blocks.GOLD_BLOCK
@@ -38,9 +39,9 @@ enum class Metal(
         ingotPreset = Items.NETHERITE_INGOT,
         storageBlockPreset = Blocks.NETHERITE_BLOCK
     ),
-    STEEL(Color.IRON.darker(100));
+    STEEL(Color.IRON.darker(50));
 
-    private val lowerName = name.lowercase();
+    val lowerName = name.lowercase();
     val titleName = lowerName.replaceFirstChar { it.uppercase() };
     val id = Mod.id(lowerName);
 
@@ -80,6 +81,10 @@ enum class Metal(
     // TODO: 진짜 양동이 자체 재료를 Metal로, 도구 추가, 갑옷 추가, 방패 추가.
 
     companion object {
+        val CODEC = Color.CODEC.xmap(Companion::fromColor, Metal::color);
+
+        fun fromColor(color: Color) = entries.find { it.color == color } ?: throw IllegalArgumentException("Invalid color");
+
         fun initialize() {}
 
         fun isPreset(item: ItemConvertible): Boolean {

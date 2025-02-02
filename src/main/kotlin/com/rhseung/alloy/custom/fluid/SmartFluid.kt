@@ -1,4 +1,4 @@
-package com.rhseung.alloy.fluid
+package com.rhseung.alloy.custom.fluid
 
 import com.rhseung.alloy.Mod
 import com.rhseung.alloy.util.RegistryHelper

@@ -2,7 +2,8 @@ package com.rhseung.alloy.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import com.rhseung.alloy.init.Metal;
+import com.rhseung.alloy.metal.Metal;
+import com.rhseung.alloy.util.Color;
 import com.rhseung.alloy.util.Utils;
 import kotlin.Triple;
 import net.minecraft.block.enums.CameraSubmersionType;
@@ -52,7 +53,7 @@ public class BackgroundRendererMixin {
         if (metalMatched == null)
             return original;
 
-        Triple<Float, Float, Float> color = metalMatched.getColor().toFloatSize();
-        return new Vector4f(color.getFirst(), color.getSecond(), color.getThird(), original.w);
+        Color color = metalMatched.getColor();
+        return new Vector4f(color.getR_F(), color.getG_F(), color.getB_F(), original.w);
     }
 }

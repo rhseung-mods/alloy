@@ -1,5 +1,6 @@
 package com.rhseung.alloy.util
 
+import com.rhseung.alloy.metal.Metal
 import java.lang.reflect.Field
 
 object Utils {
@@ -34,5 +35,29 @@ object Utils {
         } catch (e: IllegalAccessException) {
             null
         }
+    }
+
+    fun alloyName(mixingRatio: Map<Metal, Int>): String {
+        assert(mixingRatio.isNotEmpty());
+        return mixingRatio.entries.sortedBy { it.key.lowerName }.joinToString("_") { it.key.lowerName + it.value } + "_alloy";
+    }
+
+    fun alloyTitleName(mixingRatio: Map<Metal, Int>): String {
+        assert(mixingRatio.isNotEmpty());
+        return mixingRatio.entries.sortedBy { it.key.titleName }.joinToString(" ") { it.key.titleName + " " + it.value + "%" } + " Alloy";
+    }
+
+    fun alloyColor(mixingRatio: Map<Metal, Int>): Color {
+        assert(mixingRatio.isNotEmpty());
+
+        var color: Color? = null;
+        for ((metal, ratio) in mixingRatio) {
+            if (color == null)
+                color = metal.color * ratio;
+            else
+                color += metal.color * ratio;
+        }
+
+        return color!!;
     }
 }

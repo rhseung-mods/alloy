@@ -1,6 +1,8 @@
 package com.rhseung.alloy
 
-import com.rhseung.alloy.init.Metal
+import com.rhseung.alloy.init.AlloyInstance
+import com.rhseung.alloy.metal.Metal
+import com.rhseung.alloy.util.Utils
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
@@ -32,6 +34,16 @@ object ModClient : ClientModInitializer {
             ColorProviderRegistry.BLOCK.register(BlockColorProvider { _, _, _, _ ->
                 it.color.toInt() - (2 shl 23)
             }, *listOf(it.storageBlock).filterNot(Metal::isPreset).toTypedArray());
+        }
+
+        AlloyInstance.INSTANCES.forEach { (mixingComponent, instance) ->
+            BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getSolid(), instance.stillFluid, instance.flowingFluid);
+
+            FluidRenderHandlerRegistry.INSTANCE.register(instance.stillFluid, instance.flowingFluid, SimpleFluidRenderHandler(
+                Mod.id("block/molten_still"),
+                Mod.id("block/molten_flowing"),
+                Utils.alloyColor(mixingComponent.mixingRatio).toInt() - (2 shl 23)
+            ));
         }
     }
 }

@@ -1,13 +1,15 @@
 {
-	"required": true,
-	"package": "com.rhseung.alloy.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"client": [
-		"BackgroundRendererMixin"
+    "required": true,
+    "package": "com.rhseung.alloy.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "EntityMixin",
+        "FluidBlockMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "client": [
+        "BackgroundRendererMixin"
 	]
 }

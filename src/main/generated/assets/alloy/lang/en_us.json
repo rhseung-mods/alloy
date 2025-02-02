@@ -5,6 +5,8 @@
   "block.alloy.molten_netherite": "Molten Netherite",
   "block.alloy.molten_steel": "Molten Steel",
   "block.alloy.steel_block": "Steel Block",
+  "death.attack.melting": "%1$s tried to swim in molten metal",
+  "death.attack.melting.player": "%1$s tried to swim in molten metal to escape %2$s",
   "item.alloy.copper_bucket": "Molten Copper Bucket",
   "item.alloy.copper_nugget": "Copper Nugget",
   "item.alloy.gold_bucket": "Molten Gold Bucket",

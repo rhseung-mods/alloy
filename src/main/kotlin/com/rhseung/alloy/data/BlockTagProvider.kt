@@ -1,7 +1,6 @@
 package com.rhseung.alloy.data
 
-import com.rhseung.alloy.init.Metal
-import com.rhseung.alloy.init.ModFluidTags
+import com.rhseung.alloy.metal.Metal
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
 import net.minecraft.registry.RegistryWrapper
